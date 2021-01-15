@@ -1,4 +1,6 @@
 import numpy
+from classes.Setup import chess_pieces
+
 
 class Piece:
   def __init__(self,position,color,board,code):
@@ -50,21 +52,6 @@ class Piece:
     return self.code
 
       
-chess_pieces = { 
-"w_pawn"  : '\u2659', 
-"w_knight" : '\u2658',
-"w_rook" : '\u2656' ,
-"w_bishop" : '\u2657' ,
-"w_queen" : '\u2655' ,
-"w_king" : '\u2654',
-
-"b_pawn" : '\u265f',
-"b_knight" : '\u265e',
-"b_rook" : '\u265c', 
-"b_bishop" : '\u265d', 
-"b_queen" :  '\u265b' , 
-"b_king" : '\u265a'
-}
 
 #Just makes checking nearby pieces and all that slightly easier and more readable
 w_vecs = {

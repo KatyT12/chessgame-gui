@@ -1,4 +1,8 @@
 from classes.Piece import b_vecs
+from classes.Setup import chess_pieces
+
+
+import pygame
 
 
 
@@ -80,22 +84,6 @@ class Board:
     else:
       self.player2.pieces.remove(p)
    
-   
-
-
-  def print(self):
-     print("  | 0  1  2  3  4  5  6  7\n__|________________________")
-     for i in range(8):
-      string = "%d |" % i
-      for j in range(8):
-        if self.coords[i][j]:
-          string += " "+ self.coords[i][j].getCode() + " "
-        else:
-          string += " X "
-      
-    
-      print(string) 
-     print()
 
   def filter(self,coords):
     coords = [ x for x in coords if (x[0] >= 0 and x[0] <= 7) and (x[1] >= 0 and x[1] <= 7)]
@@ -219,3 +207,15 @@ class Board:
       return True
     else:
       return False
+
+
+  def draw(self,screen):
+    for i in range(len(self.coords)):
+
+      for j in range (len(self.coords[i])):
+         if self.coords[i][j] == 0:
+          screen.blit(chess_pieces["base"],(80*j,80*i))
+         else:
+          screen.blit(self.coords[i][j].code,(80*j,80*i))
+         
+         

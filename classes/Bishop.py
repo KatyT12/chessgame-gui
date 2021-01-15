@@ -1,5 +1,6 @@
 from classes.Piece import Piece
-from classes.Piece import chess_pieces
+from classes.Setup import chess_pieces
+
 
 class Bishop(Piece):
     def __init__(self,position,color,board):
