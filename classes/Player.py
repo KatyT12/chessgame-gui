@@ -6,6 +6,13 @@ class Player:
     self.num = num
     self.pieces = []
     self.king = 0
+    self.color = ""
+
+    if num == 1:
+      self.color = "white"
+    elif num == 2:
+      self.color = "black"
+
   def add_piece(self,piece):
     self.pieces.append(piece)
   def remove_piece(self,piece):

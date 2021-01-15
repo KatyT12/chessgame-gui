@@ -111,8 +111,11 @@ class Game:
         pos = self.mouse_coords()
         if pos:
           if self.piece_selected:
-            self.turn(self.piece,pos)
-            self.piece_selected = False
+            if self.get_piece_from_coord(pos) != 0 and self.get_piece_from_coord(pos).color == self.players[self.focus].color:
+              self.piece = self.get_piece_from_coord(pos)
+            else:
+              self.turn(self.piece,pos)
+              self.piece_selected = False
           else:
             if self.get_piece_from_coord(pos):
               self.piece = self.get_piece_from_coord(pos)
@@ -123,7 +126,6 @@ class Game:
 
     possible_positions = self.board.filter(piece.possible_positions())
     if not possible_positions:
-      print("No possible positions :( choose a different piece")
       return False
     if pos not in possible_positions or (piece.color == "black" and player.num == 1) or (piece.color == "white" and player.num == 2):
       return False
@@ -148,7 +150,7 @@ class Game:
       player = self.players[self.focus]
 
       ret = self.take_move_input(player,piece,pos)
-        
+      
       if ret:
         if self.focus == 0:
           self.focus = 1
@@ -157,11 +159,19 @@ class Game:
       
       #self.checkmate_check(self.player1)
       #self.checkmate_check(self.player2)
+  def draw_selected(self):
+    if self.piece_selected:
+      if self.piece.color == self.players[self.focus].color:
+        self.screen.blit(chess_pieces["selected"],(80*self.piece.position[0],80*self.piece.position[1]))
+    
+
 
   def loop(self):
     while self.running:
       self.check_events()
 
       pygame.display.update()
+
+      #Draw board
       self.board.draw(self.screen)
-     
+      self.draw_selected()
