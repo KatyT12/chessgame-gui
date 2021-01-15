@@ -13,6 +13,7 @@ def setup():
   
     pygame.init()
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
+    pygame.display.set_caption("Chess")
 
     for i in range(14):
       file = chess_files[i]
