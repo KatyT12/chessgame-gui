@@ -7,3 +7,6 @@ I put this in a seperate repo because I still want the console chess game as it'
 - Python3 
 - numpy
 - pygame
+
+
+![Alt text](assets/image.png?raw=true "Screenshot")
