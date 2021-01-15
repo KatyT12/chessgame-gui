@@ -9,4 +9,4 @@ I put this in a seperate repo because I still want the console chess game as it'
 - pygame
 
 
-![Alt text](assets/image.png?raw=true "Screenshot")
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
