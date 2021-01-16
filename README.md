@@ -5,7 +5,6 @@ I put this in a seperate repo because I still want the console chess game as it'
 ## Dependencies
 
 - Python3 
-- numpy
 - pygame
 
 

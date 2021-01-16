@@ -1,7 +1,6 @@
 from classes.Piece import Piece
 from classes.Setup import chess_pieces
 
-import numpy
 
 
 class Pawn(Piece):
